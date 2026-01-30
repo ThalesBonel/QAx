@@ -1,41 +1,55 @@
 // @ts-check
 import { test, expect } from "@playwright/test";
+import { LandingPage } from "./pages/LandingPage";
 
 test("Deve cadastrar um lead na fila de espera", async ({ page }) => {
-  await page.goto("http://localhost:3000/");
+  const landingPage = new LandingPage(page);
 
-  //Buscar por role
-  await page.getByRole("button", { name: /Aperte o play/ }).click();
+  await landingPage.visit();
+  await landingPage.openLeadModal();
+  await landingPage.submitLeadForm('Thales Bonel', 'thales@teste.com');
 
-  await expect(page.getByTestId("modal").getByRole("heading")).toHaveText("Fila de espera");
+  const toastMessage ="Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!";
+  await landingPage.toastHaveText(toastMessage);
 
-  /*   //Buscar por ID
-  await page.locator("#name").fill("Thales Testes"); */
+});
 
-  /*   //Buscar por Name
-  await page.locator("input[name=name]").fill("Thales Testes"); */
+test("Não deve cadastrar com email inválido", async ({ page }) => {
+  const landingPage = new LandingPage(page);
 
-  /* //Buscar por locator -> Placeholder
-  await page.locator('input[placeholder="Seu nome completo"]').fill("Thales Testes"); */
+  await landingPage.visit();
+  await landingPage.openLeadModal();
+  await landingPage.submitLeadForm('Thales Bonel', 'thales.teste.com');
 
-  //Buscar por Placeholder DIRETO
-  await page.getByPlaceholder("Seu nome completo").fill("Thales Testes");
+  await landingPage.alertHaveText('Email incorreto')
+});
 
-  await page.getByPlaceholder("Seu email principal").fill("thales@tests.com.br");
+test("Não deve cadastrar com nome em branco", async ({ page }) => {
+  const landingPage = new LandingPage(page);
 
-  /*   await page.getByRole("button", { name: "Quero entrar na fila!" }).click(); */
+  await landingPage.visit();
+  await landingPage.openLeadModal();
+  await landingPage.submitLeadForm('', 'thales@teste.com');
+  await landingPage.alertHaveText("Campo obrigatório")  
+});
 
-  //Outra opção de pegar o button
-  await page.getByTestId("modal").getByText("Quero entrar na fila!").click();
+test("Não deve cadastrar com email em branco", async ({ page }) => {
+  const landingPage = new LandingPage(page);
 
-  // Estratégia para buscar um toast que aparece RÁPIDO em tela para validação
-  /*   await page.getByText("seus dados conosco.").click();
+  await landingPage.visit();
+  await landingPage.openLeadModal();
+  await landingPage.submitLeadForm('Thales Bonel', '');
 
-  const content = await page.content();
-  console.log(content); */
+  await landingPage.alertHaveText("Campo obrigatório")  
+});
 
-  const toastMessage = "Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!";
-  await expect(page.locator(".toast")).toHaveText(toastMessage);
 
-  await expect(page.locator(".toast")).toBeHidden({ timeout: 5000 });
+test("Não deve cadastrar com nome E email em branco", async ({ page }) => {
+  const landingPage = new LandingPage(page);
+
+  await landingPage.visit();
+  await landingPage.openLeadModal();
+  await landingPage.submitLeadForm('', '');
+
+  await landingPage.alertHaveText(["Campo obrigatório", "Campo obrigatório"])
 });
