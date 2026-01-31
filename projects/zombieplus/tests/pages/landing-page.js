@@ -20,7 +20,6 @@ export class LandingPage {
     await this.page.getByPlaceholder("Informe seu email").fill(email);
 
     await this.page.getByTestId("modal").getByText("Quero entrar na fila!").click();
-
   }
 
   async toastHaveText(toastMessage) {
