@@ -19,9 +19,10 @@ export class LoginPage {
         await this.page.getByText('Entrar').click()
     }
 
-    async isLoggedIn() {
-        await this.page.waitForLoadState('networkidle');
-        await expect(this.page).toHaveURL(/.*admin/)
+
+    async alertHaveText(alertMessage) {
+        const alertEmail = await this.page.locator('span[class$=alert]')
+        expect(alertEmail).toHaveText(alertMessage)
     }
 
 }

@@ -1,0 +1,83 @@
+{
+    "create": {
+      "title": "A Noite dos Mortos-Vivos",
+      "overview": "Pessoas comuns se refugiam em uma casa rural enquanto mortos retornam à vida e atacam os vivos.",
+      "company": "Paramount Pictures",
+      "release_year": 2016,
+      "featured": false,
+      "cover": "/images/zombies/night_of_the_living_dead.png"
+    },
+    "dawn_of_the_dead": {
+      "title": "Despertar dos Mortos",
+      "overview": "Sobreviventes se escondem em um shopping enquanto o mundo colapsa devido a um apocalipse zumbi.",
+      "company": "United Film Distribution Company",
+      "release_year": 1978,
+      "featured": false,
+      "cover": "/images/zombies/dawn_of_the_dead.png"
+    },
+    "twenty_eight_days_later": {
+      "title": "Extermínio",
+      "overview": "Após um vírus devastar o Reino Unido, poucos sobreviventes tentam escapar de infectados extremamente violentos.",
+      "company": "Fox Searchlight Pictures",
+      "release_year": 2002,
+      "featured": false,
+      "cover": "/images/zombies/28_days_later.png"
+    },
+    "shaun_of_the_dead": {
+      "title": "Todo Mundo Quase Morto",
+      "overview": "Um homem comum tenta salvar amigos e familiares durante um apocalipse zumbi em Londres.",
+      "company": "Universal Pictures",
+      "release_year": 2004,
+      "featured": false,
+      "cover": "/images/zombies/shaun_of_the_dead.png"
+    },
+    "zombieland": {
+      "title": "Zumbilândia",
+      "overview": "Quatro sobreviventes cruzam os Estados Unidos tentando sobreviver a um mundo dominado por zumbis.",
+      "company": "Sony Pictures Releasing",
+      "release_year": 2009,
+      "featured": false,
+      "cover": "/images/zombies/zombieland.png"
+    },
+    "resident_evil": {
+      "title": "Resident Evil",
+      "overview": "Um grupo precisa sobreviver após um vírus escapar de um laboratório e transformar pessoas em mortos-vivos.",
+      "company": "Screen Gems",
+      "release_year": 2002,
+      "featured": false,
+      "cover": "/images/zombies/resident_evil.png"
+    },
+    "world_war_z": {
+      "title": "Guerra Mundial Z",
+      "overview": "Um ex-investigador da ONU viaja pelo mundo para conter uma pandemia global que transforma humanos em zumbis.",
+      "company": "Paramount Pictures",
+      "release_year": 2013,
+      "featured": false,
+      "cover": "/images/zombies/world_war_z.png"
+    },
+    "train_to_busan": {
+      "title": "Invasão Zumbi",
+      "overview": "Passageiros presos em um trem lutam pela sobrevivência durante um surto zumbi na Coreia do Sul.",
+      "company": "Next Entertainment World",
+      "release_year": 2016,
+      "featured": false,
+      "cover": "/images/zombies/train_to_busan.png"
+    },
+    "rec": {
+      "title": "Rec",
+      "overview": "Uma equipe de reportagem fica presa em um prédio durante um surto viral que transforma moradores em criaturas violentas.",
+      "company": "Filmax",
+      "release_year": 2007,
+      "featured": false,
+      "cover": "/images/zombies/rec.png"
+    },
+    "return_of_the_living_dead": {
+      "title": "A Volta dos Mortos-Vivos",
+      "overview": "Um acidente químico faz com que mortos retornem à vida famintos por cérebros humanos.",
+      "company": "Orion Pictures",
+      "release_year": 1985,
+      "featured": false,
+      "cover": "/images/zombies/return_of_the_living_dead.png"
+    }
+  }
+  
