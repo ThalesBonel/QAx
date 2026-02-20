@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test';
 import {LoginPage} from '../pages/login-page.js';
 import { MoviesPage } from '../pages/movies-page.js';
 import { Toast } from '../pages/components.js';
-import data from '../support/fixtures/movies.json';
+import  data  from '../support/fixtures/movies.json';
+import { executeSQL } from '../support/database.js';
 
 let toast;
 let moviesPage;
@@ -19,6 +20,8 @@ test('Deve cadastrar um novo filme', async ({page}) => {
 
     const movie = data.create
 
+    await executeSQL(`DELETE from movies where title = '${movie.title}' ;`)
+
     // é impotante estar logado 
     await loginPage.visit()
     await loginPage.submit('admin@zombieplus.com', 'pwd123')
@@ -28,3 +31,5 @@ test('Deve cadastrar um novo filme', async ({page}) => {
     await toast.containText('Cadastro realizado com sucesso!')
 })
 
+
+///try catch
